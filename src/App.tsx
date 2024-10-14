@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import "./index.scss";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const App = () => (
   <div className="mt-10 text-3xl mx-auto max-w-6xl">
@@ -11,9 +12,15 @@ const App = () => (
     <div>CSS: Tailwind</div>
   </div>
 );
+
+const router = createBrowserRouter([{ path: "/", element: <App /> }]);
 const rootElement = document.getElementById("app");
 if (!rootElement) throw new Error("Failed to find the root element");
 
-const root = ReactDOM.createRoot(rootElement as HTMLElement);
+ReactDOM.createRoot(rootElement).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>,
+);
 
-root.render(<App />);
+export default App;
