@@ -1,7 +1,8 @@
 import type { AxiosInstance, AxiosPromise } from "axios";
 import { ExampleData, ExampleQuery } from "./types";
 
-export default class AnalyticsApi {
+export default class ExampleApi {
+  // eslint-disable-next-line no-unused-vars
   constructor(private axiosInstance: AxiosInstance) {}
 
   getAnalytics(query: ExampleQuery): AxiosPromise<ExampleData> {
