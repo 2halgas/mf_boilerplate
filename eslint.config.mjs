@@ -8,8 +8,10 @@ import parser from "@typescript-eslint/parser";
 import globals from "globals";
 import eslintPluginPrettier from "eslint-plugin-prettier";
 import eslintConfigPrettier from "eslint-config-prettier";
+import pluginQuery from "@tanstack/eslint-plugin-query";
 
 export default defineConfig([
+  ...pluginQuery.configs["flat/recommended"],
   {
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     languageOptions: {
@@ -59,13 +61,6 @@ export default defineConfig([
         version: "detect", // Automatically detect the version of React
       },
     },
-    ignores: [
-      "node_modules/",
-      "dist/",
-      "build/",
-      "*.config.js",
-      "*.test.js",
-      "*.config.mjs",
-    ],
+    ignores: ["node_modules/", "dist/", "build/", "*.config.js", "*.test.js", "*.config.mjs"],
   },
 ]);
