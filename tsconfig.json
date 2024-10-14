@@ -24,7 +24,8 @@
     "baseUrl": "./src",
     "paths": {
       "*": ["node_modules/*"]
-    }
+    },
+    "noImplicitAny": true,
   },
   "include": [
     "src/**/*" // *** The files TypeScript should type check ***
