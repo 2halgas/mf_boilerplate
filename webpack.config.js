@@ -2,6 +2,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const path = require("path");
 const Dotenv = require("dotenv-webpack");
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 const deps = require("./package.json").dependencies;
 
@@ -82,5 +83,8 @@ module.exports = (_, argv) => ({
       template: "./src/index.html",
     }),
     new Dotenv(),
+    new TsconfigPathsPlugin({
+      extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
+    }),
   ],
 });

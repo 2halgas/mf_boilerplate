@@ -55,6 +55,7 @@ export default defineConfig([
       "@typescript-eslint/no-explicit-any": "warn",
       "prettier/prettier": "error",
       ...eslintConfigPrettier.rules,
+      "import/prefer-default-export": "off",
     },
     settings: {
       react: {
