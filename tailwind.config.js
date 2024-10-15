@@ -3,6 +3,9 @@ export default {
   darkMode: ["class"],
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      inter: ["Inter", "Inter-Italic"],
+    },
     extend: {
       borderRadius: {
         lg: "var(--radius)",

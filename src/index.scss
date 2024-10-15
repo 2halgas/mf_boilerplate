@@ -1,3 +1,5 @@
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -24,6 +26,11 @@
   text-align: center;
 }
 
+* {
+  box-sizing: border-box;
+  font-family: 'Inter';
+}
+
 body {
   margin: 0;
   display: flex;
@@ -35,13 +42,13 @@ body {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: #E4E4E7;
   }
 }
 
 @layer base {
   :root {
-    --background: #ffffff;
+    --background: #E4E4E7;
     --foreground: #0a0a0a;
     --card: #ffffff;
     --card-foreground: #0a0a0a;
@@ -93,6 +100,8 @@ body {
     --chart-4: #9258b3;
     --chart-5: #db437d;
   }
+
+
 }
 
 @layer base {
@@ -105,3 +114,15 @@ body {
 }
 
 
+@layer base {
+  @font-face {
+    font-family: "Inter";
+    src: url(/public/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf) format(ttf);
+  }
+  
+  @font-face {
+    font-family: "Inter-Italic";
+    font-style: italic;
+    src: url(/public/fonts/Inter/Inter-Italic-VariableFont_opsz\,wght.ttf) format(ttf);
+  }
+}
