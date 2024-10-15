@@ -12,7 +12,7 @@ import { Button } from "./components/ui/button";
 const App = () => {
   const { t, i18n } = useTranslation("translation");
   return (
-    <div className="mt-10 text-3xl mx-auto max-w-6xl">
+    <div className="mt-10 text-3xl mx-auto max-w-6xl font-inter">
       <div className="text-red-200">Name: EFO_core_app</div>
       <div>Framework: react</div>
       <div>Language: TypeScript</div>
