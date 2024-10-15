@@ -1,6 +1,6 @@
 {
-  "name": "EFO_core_app",
-  "version": "1.0.0",
+  "name": "efo_boilerplate",
+  "version": "0.0.1",
   "scripts": {
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
