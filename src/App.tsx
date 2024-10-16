@@ -15,7 +15,7 @@ const App = () => {
       <div>Framework: react</div>
       <div>Language: TypeScript</div>
       <div>CSS: Tailwind</div>
-      <Button variant={"secondary"}>lasllsa</Button>
+      <Button variant={"secondary"}>Button</Button>
     </div>
   );
 };
