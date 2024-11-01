@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -18,10 +17,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-#root {
+#app {
   width: 100%;
   margin: 0 auto;
-  text-align: center;
 }
 
 body {

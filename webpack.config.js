@@ -3,14 +3,13 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const path = require("path");
 const Dotenv = require("dotenv-webpack");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
-
 const deps = require("./package.json").dependencies;
 
 const printCompilationMessage = require("./compilation.config.js");
 
 module.exports = (_, argv) => ({
   output: {
-    publicPath: "http://localhost:4000/",
+    publicPath: "http://localhost:4003/",
   },
 
   resolve: {
@@ -18,7 +17,7 @@ module.exports = (_, argv) => ({
   },
 
   devServer: {
-    port: 4000,
+    port: 4003,
     historyApiFallback: true,
     watchFiles: [path.resolve(__dirname, "src")],
     onListening: function (devServer) {
@@ -63,10 +62,16 @@ module.exports = (_, argv) => ({
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "EFO_core_app",
+      name: "mf_login",
       filename: "remoteEntry.js",
-      remotes: {},
-      exposes: {},
+      remotes: {
+        EFO_core_app: "EFO_core_app@http://localhost:4000/remoteEntry.js",
+      },
+      exposes: {
+        "./auth": "./src/pages/Auth.tsx",
+        "./store": "./src/lib/hooks/auth_hook.tsx",
+        "./userAtom": "./src/store/auth_store.ts",
+      },
       shared: {
         ...deps,
         react: {
@@ -76,6 +81,10 @@ module.exports = (_, argv) => ({
         "react-dom": {
           singleton: true,
           requiredVersion: deps["react-dom"],
+        },
+        jotai: {
+          singleton: true,
+          requiredVersion: deps.jotai,
         },
       },
     }),
