@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import "./index.css";
+import "./index.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Providers from "./components/Providers";
 
@@ -27,3 +27,5 @@ ReactDOM.createRoot(rootElement).render(
     <RouterProvider router={router} />
   </Providers>,
 );
+
+export default App;
